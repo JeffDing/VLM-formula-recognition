@@ -16,12 +16,13 @@ https://github.com/Dao-AILab/flash-attention/
 pip install flash_attnXXX.whl --no-build-isolation  #前面下载下来的文件名
 
 # 安装ms-swift
-pip install ms-swift==3.50 -U
+pip install ms-swift==3.5.0 -U
 
 # 如果想源码安装的执行以下步骤，直接pip的话直接跳过
 cd /tmp/code
 git clone https://github.com/modelscope/ms-swift.git
 cd ms-swift
+git checkout v3.5.0
 pip install -e .
 
 # 安装wandb
@@ -58,12 +59,13 @@ cd mxc500-deepspeed-2.32.0.5/wheel/
 pip install deepspeed-0.15.1+4225e38d-py3-none-any.whl
 
 # 安装ms-swift
-pip install ms-swift -U
+pip install ms-swift==3.5.0 -U
 
 # 如果想源码安装的执行以下步骤，直接pip的话直接跳过
 cd /tmp/code
 git clone https://github.com/modelscope/ms-swift.git
 cd ms-swift
+git checkout v3.5.0
 pip install -e .
 
 pip install wandb
@@ -117,13 +119,21 @@ conda activate swift-npu
 ### 安装torch-npu
 ```bash
 pip install torch==2.3.1 torch-npu==2.3.1 torchaudio==2.3.1 torchvision decorator
-pip install ms-swift -U
+pip install ms-swift==3.5.0 -U
+
+# 如果想源码安装的执行以下步骤，直接pip的话直接跳过
+cd /tmp/code
+git clone https://github.com/modelscope/ms-swift.git
+cd ms-swift
+git checkout v3.5.0
+pip install -e .
+
 pip install wandb -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 ```
 ### 如果你想要使用deepspeed (控制显存占用,训练速度会有一定下降)
 ```bash
 pip install deepspeed -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
-pip install transformers==4.48
+pip install transformers==4.48.3
 pip install numpy==1.26.4
 ```
 
@@ -142,7 +152,7 @@ pip install -r requirements_ascend.txt -i https://mirrors.tuna.tsinghua.edu.cn/p
 LMDEPLOY_TARGET_DEVICE=ascend pip3 install -v --no-build-isolation -e .
 
 #安装Transformers4.48.0
-pip install transformers==4.48.0
+pip install transformers==4.48.3
 
 #安装deepspeed及mpi4py
 pip install deepspeed==0.16.2
