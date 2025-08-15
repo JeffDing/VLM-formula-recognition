@@ -40,6 +40,15 @@ cd /tmp/code
 ### 沐曦开发者社区
 [https://developer.metax-tech.com/](https://developer.metax-tech.com/)
 
+### 沐曦GPU检测工具使用说明
+打开一个终端执行mx_smi.sh
+```bash
+bash mx_smi.sh
+```
+执行gpu_info.py检测输出的csv文件内容
+```bash
+python gpu_info.py
+```
 
 ### 克隆代码仓
 ```bash
@@ -70,7 +79,7 @@ pip install -e .
 
 pip install wandb
 pip install transformers==4.48.3
-pip install numpy==1.26.4
+pip install timm
 
 cd /tmp/code
 ```
