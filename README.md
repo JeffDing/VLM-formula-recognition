@@ -4,7 +4,7 @@
 
 VLM-formula-recognition-dataset_intern_camp：
 
-(https://www.modelscope.cn/datasets/JimmyMa99/VLM-formula-recognition-dataset_intern_camp)[https://www.modelscope.cn/datasets/JimmyMa99/VLM-formula-recognition-dataset_intern_camp]
+[https://www.modelscope.cn/datasets/JimmyMa99/VLM-formula-recognition-dataset_intern_camp](https://www.modelscope.cn/datasets/JimmyMa99/VLM-formula-recognition-dataset_intern_camp)
 
 ## GPU环境配置
 ```bash
