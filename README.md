@@ -75,18 +75,6 @@ pip install numpy==1.26.4
 cd /tmp/code
 ```
 
-## 沐曦安装LMDeploy
-```bash
-# 下载lmdeploy，并进入目录
-git clone https://github.com/InternLM/lmdeploy.git
-cd lmdeploy
-
-# 安装lmdeploy
-pip install -r requirements_maca.txt #安装前去掉requirements/runtime_maca.txt中与代码仓下requirements.txt库名相同的库
-
-LMDEPLOY_TARGET_DEVICE=maca pip3 install -v --no-build-isolation -e .
-```
-
 ## 沐曦安装Xtuner
 ```bash
 # 安装环境

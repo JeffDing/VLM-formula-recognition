@@ -1,0 +1,1 @@
+mx-smi --show-memory --show-usage --loop 1000 --output output.csv
