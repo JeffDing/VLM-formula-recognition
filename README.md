@@ -10,7 +10,7 @@ VLM-formula-recognition-dataset_intern_camp：
 ```bash
 conda create -n swift python=3.12 -y
 conda activate swift
-pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+pip install torch==2.5.1+cu121 torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu121
 # flash-attention从github代码仓下载，根据python、torch、cuda版本下载对应的whl安装文件
 https://github.com/Dao-AILab/flash-attention/
 pip install flash_attnXXX.whl --no-build-isolation  #前面下载下来的文件名
