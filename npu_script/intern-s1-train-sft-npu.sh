@@ -50,7 +50,6 @@ nohup swift sft \
     --dataloader_num_workers 16 \
     --model_author JeffDing \
     --model_name SFT-camp6 \
-    --deepspeed zero2 \
     --metric acc \
     --freeze_vit true \
     > "$LOG_FILE" 2>&1 &
