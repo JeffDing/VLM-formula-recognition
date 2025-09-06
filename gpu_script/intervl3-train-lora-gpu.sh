@@ -25,9 +25,9 @@ echo "Using port: $MASTER_PORT"
 
 # 启动训练并获取PID
 nohup swift sft \
-    --model  "/root/public-model/models/OpenGVLab/InternVL3-1B" \
+    --model   "/tmp/code/model/InternVL3-1B" \
     --model_type internlm3 \
-    --dataset '/root/data/swift/train_mini.jsonl' \
+    --dataset "/tmp/code/swift/train_mini.jsonl" \
     --eval_steps 1000 \
     --train_type lora \
     --lora_rank 64 \
@@ -50,6 +50,7 @@ nohup swift sft \
     --dataloader_num_workers 16 \
     --model_author JeffDing \
     --model_name SFT-camp6 \
+    --attn_impl flash_attn \
     --metric acc \
     > "$LOG_FILE" 2>&1 &
 
@@ -69,4 +70,3 @@ else
     echo "Failed to start training process"
     echo "Check log file for errors: $LOG_FILE"
 fi
-
