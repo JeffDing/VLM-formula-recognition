@@ -10,6 +10,7 @@ LOG_FILE="$LOG_DIR/internvl3_1b_sft_${TIMESTAMP}.log"
 
 # 设置环境变量
 # export ENABLE_AUDIO_OUTPUT=False
+export NPROC_PER_NODE=1
 export OMP_NUM_THREADS=1
 export CUDA_VISIBLE_DEVICES=0
 

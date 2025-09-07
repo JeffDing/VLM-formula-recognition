@@ -10,6 +10,7 @@ LOG_FILE="$LOG_DIR/interns1mini_sft_${TIMESTAMP}.log"
 
 # 设置环境变量
 # export ENABLE_AUDIO_OUTPUT=False
+export NPROC_PER_NODE=1
 export OMP_NUM_THREADS=1
 export CUDA_VISIBLE_DEVICES=0
 
@@ -43,7 +44,7 @@ nohup swift sft \
     --save_total_limit 10 \
     --gradient_checkpointing_kwargs '{"use_reentrant": false}' \
     --logging_steps 1 \
-    --max_length 8000 \
+    --max_length 8192 \
     --output_dir ./swift_output/SFT-Interns1mini\
     --dataset_num_proc 16 \
     --dataloader_num_workers 16 \
