@@ -8,29 +8,23 @@ VLM-formula-recognition-dataset_intern_camp：
 
 ## GPU环境配置
 ```bash
-conda create -n swift python=3.12 -y
-conda activate swift
+conda create -n ms_swift python=3.12 -y
+conda activate ms_swift
 pip install torch==2.5.1+cu121 torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu121
 # flash-attention从github代码仓下载，根据python、torch、cuda版本下载对应的whl安装文件
 https://github.com/Dao-AILab/flash-attention/
 pip install flash_attnXXX.whl --no-build-isolation  #前面下载下来的文件名
 
 # 安装ms-swift
-pip install ms-swift==3.5.0 -U
-
-# 如果想源码安装的执行以下步骤，直接pip的话直接跳过
 cd /tmp/code
 git clone https://github.com/modelscope/ms-swift.git
 cd ms-swift
-git checkout v3.5.0
 pip install -e .
 
 # 安装wandb
 pip install wandb
-# 安装deepspeed
-pip install deepspeed
 
-pip install transformers==4.48.3
+pip install transformers==4.53.0
 pip install numpy==1.26.4
 
 cd /tmp/code
@@ -50,35 +44,27 @@ bash mx_smi.sh
 python gpu_info.py
 ```
 
-### 克隆代码仓
-```bash
-git clone https://openi.pcl.ac.cn/fresh-little-lemon/metax-swift-internlm-finetune-paper_classificaiton
-cd metax-swift-internlm-finetune-paper_classificaiton
-```
+## 沐曦安装ms-swift
+
 ### 安装环境
 ```bash
 conda create -n swift python=3.10 -y
 conda activate swift
+
+# cd到代码仓目录下
 pip install -r requirements.txt -i https://repos.metax-tech.com/r/maca-pypi/simple --trusted-host repos.metax-tech.com --no-build-isolation
 ```
+
 ### 源码安装
 ```bash
-tar -Jxvf mxc500-deepspeed-py310-2.32.0.5-linux-x86_64.tar.xz
-cd mxc500-deepspeed-2.32.0.5/wheel/
-pip install deepspeed-0.15.1+4225e38d-py3-none-any.whl
-
 # 安装ms-swift
-pip install ms-swift==3.5.0 -U
-
-# 如果想源码安装的执行以下步骤，直接pip的话直接跳过
 cd /tmp/code
 git clone https://github.com/modelscope/ms-swift.git
 cd ms-swift
-git checkout v3.5.0
 pip install -e .
 
 pip install wandb
-pip install transformers==4.48.3
+pip install transformers==4.53.0
 pip install timm
 
 cd /tmp/code
@@ -116,20 +102,15 @@ conda activate swift-npu
 ### 安装torch-npu
 ```bash
 pip install torch==2.6.0 torch-npu==2.6.0 torchaudio==2.6.0 torchvision decorator
-pip install ms-swift
 
-# 如果想源码安装的执行以下步骤，直接pip的话直接跳过
-cd /tmp/code
+cd /home/ma-user/work
 git clone https://github.com/modelscope/ms-swift.git
 cd ms-swift
 pip install -e .
 
 pip install wandb -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 
-# 如果你想要使用deepspeed (控制显存占用,训练速度会有一定下降)
-pip install deepspeed -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
-
-pip install transformers==4.48.3
+pip install transformers==4.53.0
 pip install numpy==1.26.4
 ```
 
@@ -147,11 +128,10 @@ cd lmdeploy
 pip install -r requirements_ascend.txt -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 LMDEPLOY_TARGET_DEVICE=ascend pip3 install -v --no-build-isolation -e .
 
-#安装Transformers4.48.0
-pip install transformers==4.48.3
+#安装Transformers4.53.0
+pip install transformers==4.53.0
 
-#安装deepspeed及mpi4py
-pip install deepspeed==0.16.2
+# 安装mpi4py
 conda install mpi4py
 
 #安装XTuner:

@@ -26,7 +26,7 @@ echo "Using port: $MASTER_PORT"
 nohup swift sft \
     --model  "/home/ma-user/work/models/InternVL3-1B" \
     --model_type internlm3 \
-    --dataset '/home/ma-user/work/swift/train_mini.jsonl' \
+    --dataset '/home/ma-user/work/work_dir/train_mini.jsonl' \
     --eval_steps 1000 \
     --train_type lora \
     --lora_rank 64 \

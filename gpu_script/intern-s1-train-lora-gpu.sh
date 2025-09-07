@@ -26,7 +26,7 @@ echo "Using port: $MASTER_PORT"
 # 启动训练并获取PID
 nohup swift sft \
     --model '/tmp/code/model/Intern-S1-mini'\
-    --dataset '/tmp/code/swift/train_mini.jsonl' \
+    --dataset '/tmp/code/work_dir/train_mini.jsonl' \
     --eval_steps 1000 \
     --train_type lora \
     --lora_rank 8 \

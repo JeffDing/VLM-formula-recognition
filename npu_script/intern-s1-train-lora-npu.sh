@@ -27,7 +27,7 @@ echo "Using port: $MASTER_PORT"
 # 启动训练并获取PID
 nohup swift sft \
     --model '/home/ma-user/work/model/Intern-S1-mini'\
-    --dataset '/home/ma-user/work/swift/train_mini.jsonl' \
+    --dataset '/home/ma-user/work/work_dir/train_mini.jsonl' \
     --eval_steps 1000 \
     --train_type lora \
     --lora_rank 16 \
@@ -45,7 +45,7 @@ nohup swift sft \
     --gradient_checkpointing_kwargs '{"use_reentrant": false}' \
     --logging_steps 1 \
     --max_length 8192 \
-    --output_dir ./swift_output/SFT-Interns1mini\
+    --output_dir ./swift_output/SFT-Interns1mini \
     --dataset_num_proc 16 \
     --dataloader_num_workers 16 \
     --model_author JeffDing \
