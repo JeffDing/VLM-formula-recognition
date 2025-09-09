@@ -44,13 +44,12 @@ nohup swift sft \
     --save_total_limit 10 \
     --gradient_checkpointing_kwargs '{"use_reentrant": false}' \
     --logging_steps 1 \
-    --max_length 8192 \
+    --max_length 8000 \
     --output_dir ./swift_output/SFT-Interns1mini\
     --dataset_num_proc 16 \
     --dataloader_num_workers 16 \
     --model_author JeffDing \
     --model_name SFT-camp6 \
-    --attn_impl flash_attn \
     --metric acc \
     --freeze_vit true \
     > "$LOG_FILE" 2>&1 &
