@@ -120,8 +120,8 @@ pip install numpy==1.26.4
 pip install torch==2.3.1 torch-npu==2.3.1 torchaudio==2.3.1 torchvision
 
 # clone代码仓
-git clone https://github.moeyy.xyz/https://github.com/InternLM/lmdeploy
-git clone https://github.moeyy.xyz/https://github.com/InternLM/xtuner.git
+git clone https://github.com/InternLM/lmdeploy
+git clone https://github.com/InternLM/xtuner
 
 # 安装LMDeploy
 cd lmdeploy
