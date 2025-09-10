@@ -99,7 +99,7 @@ apt install libgl1-mesa-glx libgl1-mesa-dri libglib2.0-0
 conda create -n swift-npu python=3.10 -y
 conda activate swift-npu
 ```
-### 安装torch-npu
+### NPU安装ms-swift
 ```bash
 pip install torch==2.6.0 torch-npu==2.6.0 torchaudio==2.6.0 torchvision decorator
 
