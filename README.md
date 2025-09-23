@@ -34,6 +34,11 @@ cd /tmp/code
 ### 沐曦开发者社区
 [https://developer.metax-tech.com/](https://developer.metax-tech.com/)
 
+### 设置环境变量(d.run)
+```bash
+export PATH=/opt/conda/bin:$PATH
+```
+
 ### 沐曦GPU检测工具使用说明
 打开一个终端执行mx_smi.sh
 ```bash
