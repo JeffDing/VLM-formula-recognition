@@ -6,7 +6,7 @@ mkdir -p $LOG_DIR
 
 # 获取当前时间戳
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-LOG_FILE="$LOG_DIR/interns1mini_sft_${TIMESTAMP}.log"
+LOG_FILE="$LOG_DIR/interns1mini_lora_${TIMESTAMP}.log"
 
 # 设置环境变量
 # export ENABLE_AUDIO_OUTPUT=False
@@ -26,13 +26,13 @@ echo "Using port: $MASTER_PORT"
 # 没有指定 model_type
 # 启动训练并获取PID
 nohup swift sft \
-    --model '/tmp/code/model/Intern-S1-mini'\
-    --dataset '/tmp/code/work_dir/train_mini.jsonl' \
+    --model '/share/new_models/Intern-S1-mini'\
+    --dataset '/root/work_dir/train_mini_abs.jsonl' \
     --eval_steps 1000 \
     --train_type lora \
-    --lora_rank 8 \
+    --lora_rank 512 \
     --lora_dropout 0.01 \
-    --lora_alpha 16 \
+    --lora_alpha 1024 \
     --torch_dtype bfloat16 \
     --num_train_epochs 5 \
     --per_device_train_batch_size 1 \
@@ -44,10 +44,10 @@ nohup swift sft \
     --save_total_limit 10 \
     --gradient_checkpointing_kwargs '{"use_reentrant": false}' \
     --logging_steps 1 \
-    --max_length 8000 \
+    --max_length 8192 \
     --output_dir ./swift_output/SFT-Interns1mini\
-    --dataset_num_proc 16 \
-    --dataloader_num_workers 16 \
+    --dataset_num_proc 256 \
+    --dataloader_num_workers 256 \
     --model_author JeffDing \
     --model_name SFT-camp6 \
     --metric acc \
