@@ -10,8 +10,9 @@ LOG_FILE="$LOG_DIR/[SFT]internvl3.5_1b_${TIMESTAMP}.log"
 
 # 设置环境变量
 # export ENABLE_AUDIO_OUTPUT=False
+export NPROC_PER_NODE=1
 export OMP_NUM_THREADS=1
-export CUDA_VISIBLE_DEVICES=0
+export ASCEND_RT_VISIBLE_DEVICES=0
 
 # 设置随机端口号，避免端口冲突
 export MASTER_PORT=$((10000 + RANDOM % 50000))
