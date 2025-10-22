@@ -6,7 +6,7 @@ mkdir -p $LOG_DIR
 
 # 获取当前时间戳
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-LOG_FILE="$LOG_DIR/[SFT]internvl3.5_1b_${TIMESTAMP}.log"
+LOG_FILE="$LOG_DIR/internvl3.5_1b_sft_${TIMESTAMP}.log"
 
 # 设置环境变量
 # export ENABLE_AUDIO_OUTPUT=False
@@ -25,8 +25,8 @@ echo "Using port: $MASTER_PORT"
 # 没有指定 model_type
 # 启动训练并获取PID
 nohup swift sft \
-    --model '/root/share/new_models/InternVL3.5/InternVL3_5-1B'\
-    --dataset '/root/share/datasets/VLM-formula-recognition-dataset_intern_camp/train/train_mini_abs.jsonl' \
+    --model '/home/ma-user/work/model/InternVL3_5-1B'\
+    --dataset '/home/ma-user/work/datasets/VLM-formula-recognition-dataset_intern_camp/train/train_mini_abs.jsonl' \
     --eval_steps 1000 \
     --train_type lora \
     --lora_rank 4 \
