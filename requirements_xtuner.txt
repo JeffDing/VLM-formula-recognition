@@ -1,6 +1,0 @@
-apex==0.1+metax2.31.0.4
-torch==2.4.0+metax2.31.0.4
-torchaudio==2.4.1+metax2.31.0.4
-torchvision==0.15.1+metax2.31.0.4
-triton==3.0.0+metax2.31.0.4
-flash_attn==2.6.3+metax2.31.0.4torch2.4
