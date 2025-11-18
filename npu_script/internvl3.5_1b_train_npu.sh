@@ -30,9 +30,9 @@ nohup swift sft \
     --dataset '/root/dataset/VLM-formula-recognition-dataset_intern_camp/train/train_mini_abs.jsonl' \
     --eval_steps 100 \
     --train_type lora \
-    --lora_rank 128 \
+    --lora_rank 2048 \
     --lora_dropout 0.01 \
-    --lora_alpha 256 \
+    --lora_alpha 4096 \
     --torch_dtype bfloat16 \
     --num_train_epochs 5 \
     --per_device_train_batch_size 2 \
