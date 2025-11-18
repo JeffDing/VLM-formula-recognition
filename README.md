@@ -117,6 +117,8 @@ pip install wandb -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 
 pip install transformers==4.53.0
 pip install numpy==1.26.4
+pip install timm==1.0.9 msgspec==0.19.0
+
 ```
 
 ## NPU安装Xtuner
