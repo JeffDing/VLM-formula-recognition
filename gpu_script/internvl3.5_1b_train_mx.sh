@@ -11,9 +11,7 @@ LOG_FILE="$LOG_DIR/internvl3.5_1b_sft_${TIMESTAMP}.log"
 # 设置环境变量
 # export ENABLE_AUDIO_OUTPUT=False
 export OMP_NUM_THREADS=1
-export ASCEND_RT_VISIBLE_DEVICES=0
-export NPROC_PER_NODE=1
-
+export CUDA_VISIBLE_DEVICES=0
 
 # 设置随机端口号，避免端口冲突
 export MASTER_PORT=$((10000 + RANDOM % 50000))
@@ -26,13 +24,13 @@ echo "Using port: $MASTER_PORT"
 # 没有指定 model_type
 # 启动训练并获取PID
 nohup swift sft \
-    --model '/root/model/InternVL3_5-1B'\
-    --dataset '/root/dataset/VLM-formula-recognition-dataset_intern_camp/train/train_mini_abs.jsonl' \
+    --model '/root/data/model/InternVL3_5-1B'\
+    --dataset '/root/data/dataset/VLM-formula-recognition-dataset-intern-camp/train/train_mini_abs.jsonl' \
     --eval_steps 100 \
     --train_type lora \
-    --lora_rank 2048 \
+    --lora_rank 32 \
     --lora_dropout 0.01 \
-    --lora_alpha 4096 \
+    --lora_alpha 64 \
     --torch_dtype bfloat16 \
     --num_train_epochs 5 \
     --per_device_train_batch_size 2 \
@@ -50,6 +48,7 @@ nohup swift sft \
     --dataloader_num_workers 8 \
     --metric acc \
     --freeze_vit true \
+    --resume_from_checkpoint "/root/data/VLM-formula-recognition-dataset/swift_output/SFT-InternVL3_5-1B/v0-20251118-132348/checkpoint-75" \
     > "$LOG_FILE" 2>&1 &
 
 # 获取PID并等待一下确保进程启动
@@ -68,4 +67,3 @@ else
     echo "Failed to start training process"
     echo "Check log file for errors: $LOG_FILE"
 fi
-
