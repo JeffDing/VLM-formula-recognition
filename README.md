@@ -24,7 +24,6 @@ pip install -e .
 # 安装wandb
 pip install wandb
 
-pip install transformers==4.53.0
 pip install numpy==1.26.4
 
 cd /tmp/code
@@ -69,8 +68,7 @@ cd ms-swift
 pip install -e .
 
 pip install wandb
-pip install transformers==4.53.0
-pip install timm
+pip install timm==1.0.9 msgspec==0.19.0
 
 cd /tmp/code
 ```
@@ -91,7 +89,7 @@ cd mxc500-xtuner-2.32.0.7/xtuner/
 
 pip install -e .[all]
 
-pip install timm
+pip install timm==1.0.9 msgspec==0.19.0
 pip install numpy==1.26.4
 
 # 如果提示LibGL不操作的话安装下面两个库
@@ -115,7 +113,6 @@ pip install -e .
 
 pip install wandb -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 
-pip install transformers==4.53.0
 pip install numpy==1.26.4
 pip install timm==1.0.9 msgspec==0.19.0
 
@@ -134,9 +131,6 @@ git clone https://github.com/InternLM/xtuner
 cd lmdeploy
 pip install -r requirements_ascend.txt -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 LMDEPLOY_TARGET_DEVICE=ascend pip3 install -v --no-build-isolation -e .
-
-#安装Transformers4.53.0
-pip install transformers==4.53.0
 
 # 安装mpi4py
 conda install mpi4py
