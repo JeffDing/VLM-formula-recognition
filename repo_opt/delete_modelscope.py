@@ -1,17 +1,16 @@
 from modelscope.hub.api import HubApi
 from modelscope.hub.constants import Licenses, ModelVisibility
-#from modelscope.hub.api.HubApi import delete_model, list_models
 
 
 YOUR_ACCESS_TOKEN = 'YOUR_ACCESS_TOKEN'
 api = HubApi()
 api.login(YOUR_ACCESS_TOKEN)
 
-owner_name = 'JeffDing'
+owner_name = 'owner_or_group'
 prefix='prefix'
 
 listmodels = api.list_models(
-    owner_or_group="YOUR_NAME OR NAMESPACE",
+    owner_or_group=owner_name,
     page_size=100
 )
 
