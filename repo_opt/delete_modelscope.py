@@ -8,14 +8,16 @@ api = HubApi()
 api.login(YOUR_ACCESS_TOKEN)
 
 owner_name = 'JeffDing'
+prefix='prefix'
 
-listmodels=api.list_models(
+listmodels = api.list_models(
     owner_or_group="YOUR_NAME OR NAMESPACE",
     page_size=100
 )
 
 for model in listmodels["Models"]:
     model_id = model["BackendSupport"]["model_id"]
-    if "prefix" in model_id:
-        print(f"Deleting: {model_id }")
-        api.delete_model(model_id=model_id )
+    if prefix in model_id:
+        repo_id = model_id
+        print(f"Deleting: {repo_id}")
+        api.delete_model(model_id=repo_id)
