@@ -16,10 +16,14 @@ https://github.com/Dao-AILab/flash-attention/
 pip install flash_attnXXX.whl --no-build-isolation  #前面下载下来的文件名
 
 # 安装ms-swift
+# 源码安装
 cd /tmp/code
 git clone https://github.com/modelscope/ms-swift.git
 cd ms-swift
 pip install -e .
+
+# pip安装
+pip install ms-swift
 
 # 安装wandb
 pip install wandb
@@ -59,13 +63,17 @@ conda activate swift
 pip install -r requirements.txt -i https://repos.metax-tech.com/r/maca-pypi/simple --trusted-host repos.metax-tech.com --no-build-isolation
 ```
 
-### 源码安装
+### 安装ms-swift
 ```bash
 # 安装ms-swift
+# 源码安装
 cd /tmp/code
 git clone https://github.com/modelscope/ms-swift.git
 cd ms-swift
 pip install -e .
+
+# pip安装
+pip install ms-swift
 
 pip install wandb
 pip install timm==1.0.9 msgspec==0.19.0
