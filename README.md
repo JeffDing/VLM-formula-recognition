@@ -18,7 +18,7 @@ pip install flash_attnXXX.whl --no-build-isolation  #前面下载下来的文件
 # 安装ms-swift
 # 源码安装
 cd /tmp/code
-git clone https://github.com/modelscope/ms-swift.git
+git clone https://gh.llkk.cc/https://github.com/modelscope/ms-swift.git
 cd ms-swift
 pip install -e .
 
@@ -68,7 +68,7 @@ pip install -r requirements.txt -i https://repos.metax-tech.com/r/maca-pypi/simp
 # 安装ms-swift
 # 源码安装
 cd /tmp/code
-git clone https://github.com/modelscope/ms-swift.git
+git clone --depth 1 -b v3.12.4 https://gh.llkk.cc/https://github.com/modelscope/ms-swift.git
 cd ms-swift
 pip install -e .
 
@@ -115,7 +115,7 @@ conda activate swift-npu
 pip install torch==2.6.0 torch-npu==2.6.0 torchaudio==2.6.0 torchvision decorator
 
 cd /home/ma-user/work
-git clone https://github.com/modelscope/ms-swift.git
+git clone https://gh.llkk.cc/https://github.com/modelscope/ms-swift.git
 cd ms-swift
 pip install -e .
 
@@ -132,8 +132,8 @@ pip install timm==1.0.9 msgspec==0.19.0
 pip install torch==2.3.1 torch-npu==2.3.1 torchaudio==2.3.1 torchvision
 
 # clone代码仓
-git clone https://github.com/InternLM/lmdeploy
-git clone https://github.com/InternLM/xtuner
+git clone https://gh.llkk.cc/https://github.com/InternLM/lmdeploy
+git clone https://gh.llkk.cc/https://github.com/InternLM/xtuner
 
 # 安装LMDeploy
 cd lmdeploy

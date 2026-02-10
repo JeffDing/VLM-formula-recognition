@@ -1,6 +1,6 @@
-apex==0.1+metax2.33.0.5
-torch==2.6.0+metax2.33.0.5
-torchaudio==2.4.1+metax2.33.0.5
-torchvision==0.15.1+metax2.33.0.5
-triton==3.0.0+metax2.33.0.5
+apex==0.1+metax3.3.0.2
+torch==2.8.0+metax3.3.0.2
+torchaudio==2.4.1+metax3.3.0.2
+torchvision==0.15.1+metax3.3.0.2
+triton==3.0.0+metax3.3.0.2
 flash_attn
