@@ -25,30 +25,29 @@ echo "Using port: $MASTER_PORT"
 # 启动训练并获取PID
 nohup swift sft \
     --model '/root/data/model/InternVL3_5-1B'\
-    --dataset '/root/data/dataset/VLM-formula-recognition-dataset-intern-camp/train/train_mini_abs.jsonl' \
+    --dataset '/root/data/dataset/VLM-formula-recognition-dataset-intern-camp/train/train_mini_resize_abs_new.jsonl' \
     --eval_steps 100 \
     --train_type lora \
-    --lora_rank 32 \
+    --lora_rank 256 \
     --lora_dropout 0.01 \
-    --lora_alpha 64 \
+    --lora_alpha 1024 \
     --torch_dtype bfloat16 \
     --num_train_epochs 5 \
     --per_device_train_batch_size 2 \
     --per_device_eval_batch_size 2 \
-    --learning_rate 5e-5 \
+    --learning_rate 1e-4 \
     --warmup_ratio 0.05 \
     --gradient_accumulation_steps 4 \
-    --save_steps 500 \
+    --save_steps 50 \
     --save_total_limit 3 \
     --gradient_checkpointing_kwargs '{"use_reentrant": false}' \
     --logging_steps 10 \
     --max_length 8000 \
     --output_dir ./swift_output/SFT-InternVL3_5-1B\
-    --dataset_num_proc 8 \
-    --dataloader_num_workers 8 \
-    --metric acc \
+    --dataset_num_proc 4 \
+    --dataloader_num_workers 4 \
+    --metric_for_best_model acc \
     --freeze_vit true \
-    --resume_from_checkpoint "/root/data/VLM-formula-recognition-dataset/swift_output/SFT-InternVL3_5-1B/v0-20251118-132348/checkpoint-75" \
     > "$LOG_FILE" 2>&1 &
 
 # 获取PID并等待一下确保进程启动
